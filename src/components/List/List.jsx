@@ -1,7 +1,6 @@
-import data from "../../data.json";
 import { Item } from "..";
 
-export default function List({ elementFilter }) {
+export default function List({ elementFilter, data }) {
   return (
     <div>
       {data
@@ -10,14 +9,11 @@ export default function List({ elementFilter }) {
             ? element.title.toLowerCase().includes(elementFilter.toLowerCase())
             : ""
         )
-
-        .map(({ id , description, ...appart }) => (
-          <Item key={id}  {...appart}>
+        .map(({ id, description, ...appart }) => (
+          <Item key={id} {...appart}>
             {description}
           </Item>
-        ))
-      }
-
+        ))}
     </div>
   );
 }
