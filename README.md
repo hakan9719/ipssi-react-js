@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Veille
+Ant
+
+formik
+
+react-modal
+react-table
+react-i18next
+react-query
+
+react-motion
+react-spring
+
+Graphique
+nivo
+plotly
+react-three-fiber (3D)
+
+NextJs SSG / SSR
+Gatsby

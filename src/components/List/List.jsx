@@ -1,14 +1,9 @@
 import { Item } from "..";
 
-export default function List({ elementFilter, data }) {
+export default function List({ list }) {
   return (
     <div>
-      {data
-        .filter((element) =>
-          elementFilter
-            ? element.title.toLowerCase().includes(elementFilter.toLowerCase())
-            : ""
-        )
+      {list
         .map(({ id, description, ...appart }) => (
           <Item key={id} {...appart}>
             {description}

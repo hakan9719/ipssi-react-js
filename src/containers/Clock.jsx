@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Clock extends Component {
     state = {
@@ -22,6 +23,7 @@ class Clock extends Component {
     render () {
         return (
             <div>
+                <Link style={{color:'red'}} to="/">Home</Link>
                 {this.state.date}
             </div>
         )

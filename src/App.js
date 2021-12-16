@@ -1,37 +1,82 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Apparts from "./components/Apparts/Apparts";
+import { Clock,  Api } from "./containers";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
-import { Filter, List } from "./components";
-import { Clock, Form } from "./containers";
-
-import data from './data.json'
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filtred: "",
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e){
-    this.setState({filtred : e.target.value})
-  }
-
+  
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Filter handleChange={this.handleChange}></Filter> 
-          {/* <Form></Form> */}
-          <Clock></Clock>
-          <List elementFilter={this.state.filtred} data={data} />
-
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Navig />} />
+              <Route path="homes" element={<Apparts />} />
+              <Route path="clock" element={<Clock />} />
+              <Route path="api" element={<Api />} />
+            </Routes>
+          </BrowserRouter>
         </header>
       </div>
     );
   }
+}
+
+function Navig() {
+  return (
+    <>
+      <NavLink
+        style={({ isActive }) => {
+          return {
+            display: "block",
+            margin: "1rem 0",
+            color: isActive ? "red" : "",
+          };
+        }}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        style={({ isActive }) => {
+          return {
+            display: "block",
+            margin: "1rem 0",
+            color: isActive ? "red" : "",
+          };
+        }}
+        to="homes"
+      >
+        Apparts
+      </NavLink>
+      <NavLink
+        style={({ isActive }) => {
+          return {
+            display: "block",
+            margin: "1rem 0",
+            color: isActive ? "red" : "",
+          };
+        }}
+        to="clock"
+      >
+        Clock
+      </NavLink>
+      <NavLink
+        style={({ isActive }) => {
+          return {
+            display: "block",
+            margin: "1rem 0",
+            color: isActive ? "red" : "",
+          };
+        }}
+        to="api"
+      >
+        Api
+      </NavLink>
+    </>
+  );
 }
 
 export default App;
